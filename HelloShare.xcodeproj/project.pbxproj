@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07600F671C4ECB3000CFE521 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07600F641C4ECB3000CFE521 /* ShareManager.m */; };
+		07600F681C4ECB3000CFE521 /* ShareObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 07600F661C4ECB3000CFE521 /* ShareObject.m */; };
+		07935BFB1C4D7588009EC69D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935BFA1C4D7588009EC69D /* main.m */; };
+		07935BFE1C4D7588009EC69D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935BFD1C4D7588009EC69D /* AppDelegate.m */; };
+		07935C011C4D7588009EC69D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C001C4D7588009EC69D /* ViewController.m */; };
+		07935C041C4D7588009EC69D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07935C021C4D7588009EC69D /* Main.storyboard */; };
+		07935C061C4D7588009EC69D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07935C051C4D7588009EC69D /* Assets.xcassets */; };
+		07935C091C4D7588009EC69D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07935C071C4D7588009EC69D /* LaunchScreen.storyboard */; };
+		07935C181C4D75E4009EC69D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C171C4D75E4009EC69D /* ShareViewController.m */; };
+		07935C1B1C4D75E4009EC69D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07935C191C4D75E4009EC69D /* MainInterface.storyboard */; };
+		07935C1F1C4D75E4009EC69D /* HelloShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 07935C141C4D75E4009EC69D /* HelloShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		07935C271C4D7E6E009EC69D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07935C261C4D7E6E009EC69D /* CoreMedia.framework */; };
+		07935C281C4D7E76009EC69D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07935C261C4D7E6E009EC69D /* CoreMedia.framework */; };
+		07935C3B1C4DA2B7009EC69D /* MMWormhole.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C2D1C4DA2B7009EC69D /* MMWormhole.m */; };
+		07935C3C1C4DA2B7009EC69D /* MMWormhole.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C2D1C4DA2B7009EC69D /* MMWormhole.m */; };
+		07935C3D1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C2F1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.m */; };
+		07935C3E1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C2F1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.m */; };
+		07935C3F1C4DA2B7009EC69D /* MMWormholeFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C311C4DA2B7009EC69D /* MMWormholeFileTransiting.m */; };
+		07935C401C4DA2B7009EC69D /* MMWormholeFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C311C4DA2B7009EC69D /* MMWormholeFileTransiting.m */; };
+		07935C411C4DA2B7009EC69D /* MMWormholeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C331C4DA2B7009EC69D /* MMWormholeSession.m */; };
+		07935C421C4DA2B7009EC69D /* MMWormholeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C331C4DA2B7009EC69D /* MMWormholeSession.m */; };
+		07935C431C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C351C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.m */; };
+		07935C441C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C351C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.m */; };
+		07935C451C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C371C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.m */; };
+		07935C461C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C371C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.m */; };
+		07935C471C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C391C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.m */; };
+		07935C481C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C391C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07935C1D1C4D75E4009EC69D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07935BEE1C4D7588009EC69D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07935C131C4D75E4009EC69D;
+			remoteInfo = HelloShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07935C231C4D75E4009EC69D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				07935C1F1C4D75E4009EC69D /* HelloShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		07600F631C4ECB3000CFE521 /* ShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareManager.h; path = Common/ShareManager.h; sourceTree = "<group>"; };
+		07600F641C4ECB3000CFE521 /* ShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareManager.m; path = Common/ShareManager.m; sourceTree = "<group>"; };
+		07600F651C4ECB3000CFE521 /* ShareObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareObject.h; path = Common/ShareObject.h; sourceTree = "<group>"; };
+		07600F661C4ECB3000CFE521 /* ShareObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareObject.m; path = Common/ShareObject.m; sourceTree = "<group>"; };
+		07600F691C4ECCD400CFE521 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		07600F6A1C4ECCD400CFE521 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		07935BF61C4D7588009EC69D /* HelloShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07935BFA1C4D7588009EC69D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07935BFC1C4D7588009EC69D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		07935BFD1C4D7588009EC69D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		07935BFF1C4D7588009EC69D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		07935C001C4D7588009EC69D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		07935C031C4D7588009EC69D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		07935C051C4D7588009EC69D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07935C081C4D7588009EC69D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		07935C0A1C4D7588009EC69D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07935C141C4D75E4009EC69D /* HelloShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HelloShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		07935C161C4D75E4009EC69D /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		07935C171C4D75E4009EC69D /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
+		07935C1A1C4D75E4009EC69D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		07935C1C1C4D75E4009EC69D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07935C241C4D7601009EC69D /* HelloShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HelloShare.entitlements; sourceTree = "<group>"; };
+		07935C251C4D7615009EC69D /* HelloShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HelloShareExtension.entitlements; sourceTree = "<group>"; };
+		07935C261C4D7E6E009EC69D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		07935C2C1C4DA2B7009EC69D /* MMWormhole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormhole.h; sourceTree = "<group>"; };
+		07935C2D1C4DA2B7009EC69D /* MMWormhole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormhole.m; sourceTree = "<group>"; };
+		07935C2E1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeCoordinatedFileTransiting.h; sourceTree = "<group>"; };
+		07935C2F1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeCoordinatedFileTransiting.m; sourceTree = "<group>"; };
+		07935C301C4DA2B7009EC69D /* MMWormholeFileTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeFileTransiting.h; sourceTree = "<group>"; };
+		07935C311C4DA2B7009EC69D /* MMWormholeFileTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeFileTransiting.m; sourceTree = "<group>"; };
+		07935C321C4DA2B7009EC69D /* MMWormholeSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeSession.h; sourceTree = "<group>"; };
+		07935C331C4DA2B7009EC69D /* MMWormholeSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeSession.m; sourceTree = "<group>"; };
+		07935C341C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeSessionContextTransiting.h; sourceTree = "<group>"; };
+		07935C351C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeSessionContextTransiting.m; sourceTree = "<group>"; };
+		07935C361C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeSessionFileTransiting.h; sourceTree = "<group>"; };
+		07935C371C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeSessionFileTransiting.m; sourceTree = "<group>"; };
+		07935C381C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeSessionMessageTransiting.h; sourceTree = "<group>"; };
+		07935C391C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeSessionMessageTransiting.m; sourceTree = "<group>"; };
+		07935C3A1C4DA2B7009EC69D /* MMWormholeTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeTransiting.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07935BF31C4D7588009EC69D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07935C281C4D7E76009EC69D /* CoreMedia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07935C111C4D75E4009EC69D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07935C271C4D7E6E009EC69D /* CoreMedia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07600F621C4ECB1E00CFE521 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				07600F631C4ECB3000CFE521 /* ShareManager.h */,
+				07600F641C4ECB3000CFE521 /* ShareManager.m */,
+				07600F651C4ECB3000CFE521 /* ShareObject.h */,
+				07600F661C4ECB3000CFE521 /* ShareObject.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		07935BED1C4D7588009EC69D = {
+			isa = PBXGroup;
+			children = (
+				07600F691C4ECCD400CFE521 /* README.md */,
+				07600F6A1C4ECCD400CFE521 /* LICENSE.md */,
+				07935C2B1C4DA2B7009EC69D /* MMWormhole */,
+				07600F621C4ECB1E00CFE521 /* Common */,
+				07935C261C4D7E6E009EC69D /* CoreMedia.framework */,
+				07935BF81C4D7588009EC69D /* HelloShare */,
+				07935C151C4D75E4009EC69D /* HelloShareExtension */,
+				07935BF71C4D7588009EC69D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07935BF71C4D7588009EC69D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07935BF61C4D7588009EC69D /* HelloShare.app */,
+				07935C141C4D75E4009EC69D /* HelloShareExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07935BF81C4D7588009EC69D /* HelloShare */ = {
+			isa = PBXGroup;
+			children = (
+				07935C241C4D7601009EC69D /* HelloShare.entitlements */,
+				07935BFC1C4D7588009EC69D /* AppDelegate.h */,
+				07935BFD1C4D7588009EC69D /* AppDelegate.m */,
+				07935BFF1C4D7588009EC69D /* ViewController.h */,
+				07935C001C4D7588009EC69D /* ViewController.m */,
+				07935C021C4D7588009EC69D /* Main.storyboard */,
+				07935C051C4D7588009EC69D /* Assets.xcassets */,
+				07935C071C4D7588009EC69D /* LaunchScreen.storyboard */,
+				07935C0A1C4D7588009EC69D /* Info.plist */,
+				07935BF91C4D7588009EC69D /* Supporting Files */,
+			);
+			path = HelloShare;
+			sourceTree = "<group>";
+		};
+		07935BF91C4D7588009EC69D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07935BFA1C4D7588009EC69D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07935C151C4D75E4009EC69D /* HelloShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				07935C251C4D7615009EC69D /* HelloShareExtension.entitlements */,
+				07935C161C4D75E4009EC69D /* ShareViewController.h */,
+				07935C171C4D75E4009EC69D /* ShareViewController.m */,
+				07935C191C4D75E4009EC69D /* MainInterface.storyboard */,
+				07935C1C1C4D75E4009EC69D /* Info.plist */,
+			);
+			path = HelloShareExtension;
+			sourceTree = "<group>";
+		};
+		07935C2B1C4DA2B7009EC69D /* MMWormhole */ = {
+			isa = PBXGroup;
+			children = (
+				07935C2C1C4DA2B7009EC69D /* MMWormhole.h */,
+				07935C2D1C4DA2B7009EC69D /* MMWormhole.m */,
+				07935C2E1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.h */,
+				07935C2F1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.m */,
+				07935C301C4DA2B7009EC69D /* MMWormholeFileTransiting.h */,
+				07935C311C4DA2B7009EC69D /* MMWormholeFileTransiting.m */,
+				07935C321C4DA2B7009EC69D /* MMWormholeSession.h */,
+				07935C331C4DA2B7009EC69D /* MMWormholeSession.m */,
+				07935C341C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.h */,
+				07935C351C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.m */,
+				07935C361C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.h */,
+				07935C371C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.m */,
+				07935C381C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.h */,
+				07935C391C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.m */,
+				07935C3A1C4DA2B7009EC69D /* MMWormholeTransiting.h */,
+			);
+			path = MMWormhole;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07935BF51C4D7588009EC69D /* HelloShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07935C0D1C4D7588009EC69D /* Build configuration list for PBXNativeTarget "HelloShare" */;
+			buildPhases = (
+				07935BF21C4D7588009EC69D /* Sources */,
+				07935BF31C4D7588009EC69D /* Frameworks */,
+				07935BF41C4D7588009EC69D /* Resources */,
+				07935C231C4D75E4009EC69D /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07935C1E1C4D75E4009EC69D /* PBXTargetDependency */,
+			);
+			name = HelloShare;
+			productName = HelloShare;
+			productReference = 07935BF61C4D7588009EC69D /* HelloShare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07935C131C4D75E4009EC69D /* HelloShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07935C201C4D75E4009EC69D /* Build configuration list for PBXNativeTarget "HelloShareExtension" */;
+			buildPhases = (
+				07935C101C4D75E4009EC69D /* Sources */,
+				07935C111C4D75E4009EC69D /* Frameworks */,
+				07935C121C4D75E4009EC69D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloShareExtension;
+			productName = HelloShareExtension;
+			productReference = 07935C141C4D75E4009EC69D /* HelloShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07935BEE1C4D7588009EC69D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Eric Hayes";
+				TargetAttributes = {
+					07935BF51C4D7588009EC69D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 7JY5VFHC24;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					07935C131C4D75E4009EC69D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 7JY5VFHC24;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 07935BF11C4D7588009EC69D /* Build configuration list for PBXProject "HelloShare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 07935BED1C4D7588009EC69D;
+			productRefGroup = 07935BF71C4D7588009EC69D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07935BF51C4D7588009EC69D /* HelloShare */,
+				07935C131C4D75E4009EC69D /* HelloShareExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07935BF41C4D7588009EC69D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07935C091C4D7588009EC69D /* LaunchScreen.storyboard in Resources */,
+				07935C061C4D7588009EC69D /* Assets.xcassets in Resources */,
+				07935C041C4D7588009EC69D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07935C121C4D75E4009EC69D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07935C1B1C4D75E4009EC69D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07935BF21C4D7588009EC69D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07935C451C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.m in Sources */,
+				07935C011C4D7588009EC69D /* ViewController.m in Sources */,
+				07935C3F1C4DA2B7009EC69D /* MMWormholeFileTransiting.m in Sources */,
+				07935C431C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.m in Sources */,
+				07935BFE1C4D7588009EC69D /* AppDelegate.m in Sources */,
+				07600F671C4ECB3000CFE521 /* ShareManager.m in Sources */,
+				07600F681C4ECB3000CFE521 /* ShareObject.m in Sources */,
+				07935C3D1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.m in Sources */,
+				07935C3B1C4DA2B7009EC69D /* MMWormhole.m in Sources */,
+				07935BFB1C4D7588009EC69D /* main.m in Sources */,
+				07935C471C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.m in Sources */,
+				07935C411C4DA2B7009EC69D /* MMWormholeSession.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07935C101C4D75E4009EC69D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07935C421C4DA2B7009EC69D /* MMWormholeSession.m in Sources */,
+				07935C3E1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.m in Sources */,
+				07935C481C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.m in Sources */,
+				07935C441C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.m in Sources */,
+				07935C3C1C4DA2B7009EC69D /* MMWormhole.m in Sources */,
+				07935C181C4D75E4009EC69D /* ShareViewController.m in Sources */,
+				07935C401C4DA2B7009EC69D /* MMWormholeFileTransiting.m in Sources */,
+				07935C461C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07935C1E1C4D75E4009EC69D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07935C131C4D75E4009EC69D /* HelloShareExtension */;
+			targetProxy = 07935C1D1C4D75E4009EC69D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		07935C021C4D7588009EC69D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07935C031C4D7588009EC69D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		07935C071C4D7588009EC69D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07935C081C4D7588009EC69D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		07935C191C4D75E4009EC69D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07935C1A1C4D75E4009EC69D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07935C0B1C4D7588009EC69D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		07935C0C1C4D7588009EC69D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07935C0E1C4D7588009EC69D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HelloShare/HelloShare.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = HelloShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brewmium.HelloShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		07935C0F1C4D7588009EC69D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HelloShare/HelloShare.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = HelloShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brewmium.HelloShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		07935C211C4D75E4009EC69D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HelloShareExtension/HelloShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = HelloShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brewmium.HelloShare.HelloShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		07935C221C4D75E4009EC69D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HelloShareExtension/HelloShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = HelloShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brewmium.HelloShare.HelloShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07935BF11C4D7588009EC69D /* Build configuration list for PBXProject "HelloShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07935C0B1C4D7588009EC69D /* Debug */,
+				07935C0C1C4D7588009EC69D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07935C0D1C4D7588009EC69D /* Build configuration list for PBXNativeTarget "HelloShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07935C0E1C4D7588009EC69D /* Debug */,
+				07935C0F1C4D7588009EC69D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07935C201C4D75E4009EC69D /* Build configuration list for PBXNativeTarget "HelloShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07935C211C4D75E4009EC69D /* Debug */,
+				07935C221C4D75E4009EC69D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07935BEE1C4D7588009EC69D /* Project object */;
+}
