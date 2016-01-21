@@ -18,8 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
-	// start up the share manager
-	[ShareManager sharedInstance];
+	// start up the share manager & ask it to start listening to shares
+	[[ShareManager sharedInstance] setupToCatchShares];
 	
     // Override point for customization after application launch.
     return YES;

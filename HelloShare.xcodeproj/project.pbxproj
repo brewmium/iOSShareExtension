@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		07600F671C4ECB3000CFE521 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07600F641C4ECB3000CFE521 /* ShareManager.m */; };
 		07600F681C4ECB3000CFE521 /* ShareObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 07600F661C4ECB3000CFE521 /* ShareObject.m */; };
+		07600F6E1C4ECE5200CFE521 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07600F641C4ECB3000CFE521 /* ShareManager.m */; };
+		07600F6F1C4ECE5200CFE521 /* ShareObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 07600F661C4ECB3000CFE521 /* ShareObject.m */; };
 		07935BFB1C4D7588009EC69D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935BFA1C4D7588009EC69D /* main.m */; };
 		07935BFE1C4D7588009EC69D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935BFD1C4D7588009EC69D /* AppDelegate.m */; };
 		07935C011C4D7588009EC69D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07935C001C4D7588009EC69D /* ViewController.m */; };
@@ -133,16 +135,24 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		07600F6D1C4ECDD600CFE521 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				07935C2B1C4DA2B7009EC69D /* MMWormhole */,
+				07935C261C4D7E6E009EC69D /* CoreMedia.framework */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
 		07935BED1C4D7588009EC69D = {
 			isa = PBXGroup;
 			children = (
 				07600F691C4ECCD400CFE521 /* README.md */,
 				07600F6A1C4ECCD400CFE521 /* LICENSE.md */,
-				07935C2B1C4DA2B7009EC69D /* MMWormhole */,
 				07600F621C4ECB1E00CFE521 /* Common */,
-				07935C261C4D7E6E009EC69D /* CoreMedia.framework */,
 				07935BF81C4D7588009EC69D /* HelloShare */,
 				07935C151C4D75E4009EC69D /* HelloShareExtension */,
+				07600F6D1C4ECDD600CFE521 /* Vendor */,
 				07935BF71C4D7588009EC69D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -354,7 +364,9 @@
 				07935C3E1C4DA2B7009EC69D /* MMWormholeCoordinatedFileTransiting.m in Sources */,
 				07935C481C4DA2B7009EC69D /* MMWormholeSessionMessageTransiting.m in Sources */,
 				07935C441C4DA2B7009EC69D /* MMWormholeSessionContextTransiting.m in Sources */,
+				07600F6E1C4ECE5200CFE521 /* ShareManager.m in Sources */,
 				07935C3C1C4DA2B7009EC69D /* MMWormhole.m in Sources */,
+				07600F6F1C4ECE5200CFE521 /* ShareObject.m in Sources */,
 				07935C181C4D75E4009EC69D /* ShareViewController.m in Sources */,
 				07935C401C4DA2B7009EC69D /* MMWormholeFileTransiting.m in Sources */,
 				07935C461C4DA2B7009EC69D /* MMWormholeSessionFileTransiting.m in Sources */,
