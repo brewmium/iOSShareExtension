@@ -56,54 +56,22 @@
 	// save what we found to the shared group
 	if ( outputDict.count > 0 ) {
 		
-#if USE_USER_DEFAULTS
-		NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:kAppGroupId];
-		
-		// find an unused key to store the output into
-		NSInteger counter = 0;
-		NSString *theKey = nil;
-		while ( theKey == nil ) {
-			theKey = [NSString stringWithFormat:@"%@%zd", kShareBaseKey, counter];
-			if ( [sharedUserDefaults objectForKey:theKey] != nil ) {
-				// this key exists, nil it out & we'll do another
-				theKey = nil;
-				counter++;
+		NSURL *fileURL = [self makeUniqueShareFileURL];
+
+		if ( fileURL ) {
+			NSData *asData = [NSKeyedArchiver archivedDataWithRootObject:outputDict];
+			BOOL result = [asData writeToURL:fileURL atomically:YES];
+			if ( result == NO ) {
+				NSLog(@"write failed");
 			}
 		}
+		NSString *theKey = [fileURL lastPathComponent];
 		
-		// finally, store it out & sync the shared defaults
-		[sharedUserDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:outputDict] forKey:theKey];
-		[sharedUserDefaults synchronize];
-#else
-		NSFileManager *fm = [NSFileManager defaultManager];
-		NSURL *groupURL = [fm containerURLForSecurityApplicationGroupIdentifier:kAppGroupId];
-		NSString *basePath = [groupURL.absoluteString stringByAppendingString:@"shares"];
-		[[NSFileManager defaultManager] createDirectoryAtPath:basePath withIntermediateDirectories:YES attributes:nil error:nil];
-		
-		// find an unused filename to store the output into
-		NSInteger counter = 0;
-		NSString *filePath = nil;
-		while ( filePath == nil ) {
-			filePath = [basePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%zd", kShareBaseKey, counter]];
-			if ( [fm fileExistsAtPath:filePath isDirectory:nil] ) {
-				// this key exists, nil it out & we'll do another
-				filePath = nil;
-				counter++;
-			}
+		if ( theKey.length > 0 ) {
+			// now, lets use wormhole to ping our parent
+			MMWormhole *wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:kAppGroupId optionalDirectory:kWormholeDirectory];
+			[wormhole passMessageObject:theKey identifier:kShareMessage];
 		}
-		
-		NSData *asData = [NSKeyedArchiver archivedDataWithRootObject:outputDict];
-		BOOL result = [asData writeToFile:filePath atomically:YES];
-		if ( result == NO ) {
-			NSLog(@"write failed");
-		}
-		
-		NSString *theKey = [filePath lastPathComponent];
-#endif
-		
-		// now, lets use wormhole to ping our parent
-		MMWormhole *wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:kAppGroupId optionalDirectory:kWormholeDirectory];
-		[wormhole passMessageObject:theKey identifier:kShareMessage];
 	}
 	
 	// tell the host we are done
@@ -196,7 +164,8 @@
 		}
 	}
 	
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	// make the output location
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	NSString *basePath = paths.firstObject;
 	NSString *shareDir = [basePath stringByAppendingPathComponent:@"share"];
 	
@@ -221,28 +190,53 @@
 	}
 }
 
+- (NSURL *)makeUniqueShareFileURL
+{
+	//NSURL *sharesURL = [self getSharesURL];
+	
+	NSInteger counter = 0;
+	NSURL *fileURL = nil;
+	while ( fileURL == nil ) {
+		fileURL = [self getShareFileURL:[NSString stringWithFormat:@"%@%zd", kShareBaseKey, counter]];
+		//fileURL = [sharesURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@%zd", kShareBaseKey, counter]];
+		if ( [[NSFileManager defaultManager] fileExistsAtPath:[fileURL path] isDirectory:nil] ) {
+			// this key exists, nil it out & we'll do another
+			fileURL = nil;
+			counter++;
+		}
+	}
+	
+	return fileURL;
+}
+
+- (NSURL *)getShareFileURL:(NSString *)shareKey
+{
+	NSURL *sharesURL = [self getSharesURL];
+	NSURL *fileURL = [sharesURL URLByAppendingPathComponent:shareKey isDirectory:NO];
+	return fileURL;
+}
+
+- (NSURL *)getSharesURL
+{
+	NSFileManager *fm = [NSFileManager defaultManager];
+	NSURL *groupURL = [fm containerURLForSecurityApplicationGroupIdentifier:kAppGroupId];
+	NSURL *shareDir = [groupURL URLByAppendingPathComponent:@"shares" isDirectory:YES];
+	
+	NSError *err = nil;
+	[fm createDirectoryAtPath:[shareDir path] withIntermediateDirectories:YES attributes:nil error:&err];
+	
+	return shareDir;
+}
+
 // process one by key
 - (void)processOneShare:(NSString *)theKeyOrFilename
 {
-#if USE_USER_DEFAULTS
-	NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:kAppGroupId];
-	NSData *theShareData = [sharedUserDefaults objectForKey:theKeyOrFilename];
-	if ( theShareData == nil ) {
-		return;
-	}
-	
-	NSMutableDictionary *theShare = [NSKeyedUnarchiver unarchiveObjectWithData:theShareData];
-	
-#else
-	NSFileManager *fm = [NSFileManager defaultManager];
-	NSURL *groupURL = [fm containerURLForSecurityApplicationGroupIdentifier:kAppGroupId];
-	NSString *filePath = [groupURL.absoluteString stringByAppendingPathComponent:theKeyOrFilename];
-	NSData *theShareData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingUncached error:nil];
+	NSURL *fileURL = [self getShareFileURL:theKeyOrFilename];
+	NSData *theShareData = [NSData dataWithContentsOfFile:[fileURL path] options:NSDataReadingUncached error:nil];
 	NSMutableDictionary *theShare = nil;
 	if ( theShareData ) {
 		theShare = [NSKeyedUnarchiver unarchiveObjectWithData:theShareData];
 	}
-#endif
 	
 	if ( theShare ) {
 		[self processOneShare:theShare forKey:theKeyOrFilename];
@@ -258,18 +252,10 @@
 		
 	}
 	
-#if USE_USER_DEFAULTS
-	// and remove it
-	NSUserDefaults *sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:kAppGroupId];
-	[sharedUserDefaults removeObjectForKey:theKeyToRemoveUponSuccess];
-	[sharedUserDefaults synchronize];
-	
-#else
 	NSFileManager *fm = [NSFileManager defaultManager];
 	NSURL *groupURL = [fm containerURLForSecurityApplicationGroupIdentifier:kAppGroupId];
 	NSString *filePath = [groupURL.absoluteString stringByAppendingPathComponent:theKeyToRemoveUponSuccess];
 	[fm removeItemAtPath:filePath error:nil];
-#endif
 	
 	[self outputShareToFileSystemAndJson:theShare];
 }

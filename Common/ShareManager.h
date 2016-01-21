@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "ShareObject.h"
 
-#define USE_USER_DEFAULTS (1)
 #define kAppGroupId @"group.brewmium.reactnative.share"
 #define kWormholeDirectory @"wormhole"
+#define kSharesDirectorys @"shares"
 #define kShareMessage @"share"
 #define kShareBaseKey @"share_"
 #define kShareText @"share_text"
