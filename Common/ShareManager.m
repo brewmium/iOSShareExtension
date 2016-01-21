@@ -182,7 +182,7 @@
 }
 
 // just look for stale shares (when we come to front)
-- (void)processShares
+- (void)processShares;
 {
 	for ( NSInteger counter = 0 ; counter < 100 ; counter++ ) {
 		NSString *theKey = [NSString stringWithFormat:@"%@%zd", kShareBaseKey, counter];

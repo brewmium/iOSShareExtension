@@ -28,10 +28,27 @@ typedef void (^ProcessShareClosure)(NSError *error, NSDictionary *shareObject);
 
 @property (nonatomic, strong) id<ShareUXDelegate> uxDelegate;	// prototype use only!!! this will cause a retain issue, don't update your UX like this!
 
+// initialie the singleton
 + (ShareManager *)sharedInstance;
+
+//
+// Parent App Methods
+//
+
+// if you are the parent App, you can start listening for your extension & process those shares
 - (void)setupToCatchShares;
+
+// Notify the Parent App of new shares. Really for prototype use only!!! this can/WILL cause a retain issues, don't update your UX like this!
 - (void)registerUXDelegate:(id<ShareUXDelegate>)theDelegate;
 
+// loop any stale shares and process them
+- (void)processShares;
+
+//
+// Extension Methods
+//
+
+// called by the extension to process a share.
 - (void)processThePost:(NSArray *)attachments withPostText:(NSString *)postContent closure:(ProcessShareClosure)closure;
 
 
