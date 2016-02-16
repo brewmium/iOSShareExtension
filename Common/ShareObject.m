@@ -46,7 +46,14 @@
 	
 	// add the URLs
 	if ( self.urls.count > 0 ) {
-		[futureJson setObject:self.urls forKey:@"images"];
+//		NSMutableArray *marr = [NSMutableArray arrayWithCapacity:self.urls.count];
+//		for ( NSURL *url in self.urls ) {
+//			NSString *str = url.absoluteString;
+//			if ( str.length > 0 ) {
+//				[marr addObject:str];
+//			}
+//		}
+		[futureJson setObject:self.urls forKey:@"urls"];
 	}
 	
 	// convert our dict to a json string

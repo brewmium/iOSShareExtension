@@ -105,7 +105,7 @@
 			[itemProvider loadItemForTypeIdentifier:(__bridge NSString *)kUTTypeURL options:nil completionHandler:^(NSURL *url, NSError *error) {
 				// if we succeeded, add the item to the output
 				if ( error == nil && url ) {
-					[outputDict setObject:url forKey:itemKey];
+					[outputDict setObject:url.absoluteString forKey:itemKey];
 				}
 				
 				// and recurse
@@ -156,8 +156,15 @@
 				if ( output.urls ==  nil ) {
 					output.urls = [NSMutableArray new];
 				}
+				NSURL *url = theObject;
+				[output.urls addObject:url.absoluteString];
+			
+			} else if ( [theObject isKindOfClass:[NSString class]] ) {
+				if ( output.urls ==  nil ) {
+					output.urls = [NSMutableArray new];
+				}
 				[output.urls addObject:theObject];
-				
+
 			} else {
 				NSLog(@"unknown type of share object: %@", theObject);
 			}
